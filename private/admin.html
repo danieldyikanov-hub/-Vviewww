@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Панель администратора</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="menu-button" onclick="toggleMenu()">
+    ☰
+</div>
+
+<nav id="menu" class="menu">
+    <a href="gallery.html">Фотографии</a>
+    <a href="songs.html">Песни</a>
+    <a href="contacts.html">Контакты</a>
+
+    <a href="/">Об артистке</a>
+</nav>
+
+<h1>Панель администратора</h1>
+
+<div class="admin-panel">
+
+<h2>Загрузить фото</h2>
+
+<form action="/upload-photo" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="photo">
+
+    <button type="submit">
+        Загрузить
+    </button>
+
+</form>
+
+<h2>Добавить песню</h2>
+
+<form
+action="/upload-song"
+method="POST"
+enctype="multipart/form-data"
+>
+
+    <input type="file" name="song">
+
+    <button type="submit">
+        Добавить песню
+    </button>
+
+</form>
+
+<br><br>
+
+<a href="/logout" class="logout-link">
+    Выйти
+</a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
