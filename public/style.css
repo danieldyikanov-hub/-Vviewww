@@ -215,8 +215,8 @@ p {
     padding: 15px 25px;
     font-size: 18px;
     font-family: Raleway;
-    background: #222;
-    color: black;
+    background: red;
+    color: white;
     border: 2px solid white;
     border-radius:40px;
     cursor: pointer;
