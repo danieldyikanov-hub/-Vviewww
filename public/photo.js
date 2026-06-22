@@ -73,7 +73,7 @@ deleteBtn.onclick = () => {
 
 };
 
-        img.src = "/uploads/" + file;
+        img.src = file.url;
         images.push(img.src);
 
         img.style.width = "300px";

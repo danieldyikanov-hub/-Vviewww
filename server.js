@@ -274,17 +274,33 @@ app.post(
 
     }
 );
-app.get("/photos", (req, res) => {
+app.get("/photos", async (req, res) => {
 
-    if (!fs.existsSync("public/uploads")) {
-        return res.json([]);
+    try {
+
+        const result =
+            await cloudinary.search
+            .expression("folder:photos")
+            .sort_by("created_at", "desc")
+            .max_results(100)
+            .execute();
+
+        const photos =
+            result.resources.map(photo => ({
+                url: photo.secure_url,
+                public_id: photo.public_id
+            }));
+
+        res.json(photos);
+
+    } catch (err) {
+
+        console.log(err);
+        res.json([]);
+
     }
 
-    const files = fs.readdirSync("public/uploads");
-
-    res.json(files);
-
-});;
+});
 
 app.use(express.json());
 
