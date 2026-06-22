@@ -74,7 +74,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 const users = JSON.parse(
-    fs.readFileSync("users.json")
+    fs.readFileSync("users.json", "utf8")
 );
 
 app.post("/login", async (req, res) => {
