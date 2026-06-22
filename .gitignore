@@ -1,5 +1,8 @@
 node_modules
 users.json
-public/uploads
-public/songs
+public/uploads/*
+!public/uploads/.keep
+
+public/songs/*
+!public/songs/.keep
 .env
