@@ -12,6 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcrypt": ,
+    "cloudinary":,
     "express": "^5.2.1"
   }
 }
