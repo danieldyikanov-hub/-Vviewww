@@ -12,8 +12,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcrypt": ,
-    "cloudinary":,
-    "express": "^5.2.1"
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5"
   }
 }
