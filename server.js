@@ -249,13 +249,31 @@ app.post("/resetpassword", async (req, res) => {
 app.post(
     "/upload-photo",
     upload.single("photo"),
-    (req, res) => {
+    async (req, res) => {
 
-        res.send("Фото успешно загружено!");
+        try {
+
+            await cloudinary.uploader.upload(
+                req.file.path,
+                {
+                    folder: "photos"
+                }
+            );
+
+            fs.unlinkSync(req.file.path);
+
+            res.send("Фото загружено");
+
+        } catch (err) {
+
+            console.log(err);
+
+            res.status(500).send("Ошибка загрузки");
+
+        }
 
     }
 );
-
 app.get("/photos", (req, res) => {
 
     if (!fs.existsSync("public/uploads")) {
